@@ -24,7 +24,7 @@ app.get('/api/questions', (req , res)=>{
 app.get('/api/questions/key=123/:id', (req , res)=>{
 
 
-    const question = questions.find((q) => String(q.id) === req.params.id)
+    const question = questions.find((q) => String(q.id) === String(req.params.id))
 
     res.send(question)
     // console.log(question)
